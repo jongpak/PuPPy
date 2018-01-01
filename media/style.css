@@ -1,0 +1,177 @@
+/****************************************************
+ * common
+ ****************************************************/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+::selection {
+    background: rgb(225, 255, 125);
+}
+body {
+    font-size: 12pt;
+    font-weight: 300;
+    background: rgb(240, 240, 240);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 20px 0 5px 0;
+}
+h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
+    margin-top: 7px !important;
+}
+
+ol, ul {
+    margin: 15px 0;
+    line-height: 1.4em;
+}
+ul ul, ol ol {
+    margin: 0;
+}
+li {
+    margin: 0 0 0 20px;
+}
+
+p {
+    line-height: 1.4em;
+}
+p + p {
+    margin: 20px 0;
+}
+* + p {
+    margin-top: 20px;
+}
+
+img {
+    padding: 7px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+table {
+    border-collapse: collapse;
+}
+th {
+    background: rgb(230, 230, 230);
+}
+td, th {
+    border: 1px solid rgb(200, 200, 200);
+    padding: 5px;
+}
+
+blockquote {
+    padding: 10px;
+    border-left: 7px solid rgb(200, 200, 200);
+    background: rgb(240, 240, 240);
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+code {
+    padding: 2px;
+    background: rgb(225, 225, 225);
+    color: rgb(200, 50, 50);
+}
+pre {
+    padding: 10px;
+    color: white;
+    background: black;
+}
+pre code {
+    padding: 0;
+    color: inherit;
+    background: transparent;
+}
+
+
+/****************************************************
+ * header
+ ****************************************************/
+
+#header {
+    padding: 7px;
+    color: white;
+    background: rgb(40, 40, 40);
+}
+#header .header-title {
+    font-size: 16pt;
+}
+#header .header-title, #body {
+    width: 80%;    
+    margin: 0 auto;
+}
+
+
+/****************************************************
+ * content
+ ****************************************************/
+
+#content {
+    margin: 20px 0;
+}
+
+
+/****************************************************
+ * post
+ ****************************************************/
+
+.post {
+    background: white;
+    margin-bottom: 75px;
+}
+.post .post-header {
+    position: relative;
+    padding: 25px 25px 40px 25px;
+    background: rgb(240, 240, 240);
+}
+.post .post-header .post-title {
+    font-size: 24pt;
+    text-align: center;
+}
+.post .post-header .post-info {
+    position: absolute;
+    right: 25px;
+    font-size: 10pt;
+    color: rgb(100, 100, 100);
+}
+
+
+/****************************************************
+ * post body
+ ****************************************************/
+
+ .post .post-body {
+    padding: 25px;
+    border: 1px solid rgb(230, 230, 230);
+}
+.post .post-body *:first-child {
+    margin-top: 0;
+}
+
+.post .post-body h1 {
+    font-size: 20pt;
+}
+.post .post-body h2 {
+    font-size: 18pt;
+}
+.post .post-body h3 {
+    font-size: 16pt;
+}
+.post .post-body h4,
+.post .post-body h5,
+.post .post-body h6 {
+    font-size: 14pt;
+}
+
+.post .post-body hr {
+    width: 90%;
+    margin: 35px auto;
+    border: none;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.post .post-hr {
+    display: none;
+}
