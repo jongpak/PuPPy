@@ -3,20 +3,20 @@ const path = require('path');
 const marked = require('marked');
 
 const post = require('./lib.post');
-const paths = require('./config.path');
+const config = require('./config.app');
 
-async function index (req, res) {
-    const posts = await post.getPosts(paths.post);
+async function list (req, res) {
+    const posts = await post.getPosts(config.path.post);
     const processedPosts = await Promise.all(posts.map(convertPost));
 
-    res.render('posts', {
+    res.render('list', {
         posts: processedPosts
     });
 }
 
 function convertPost(post) {
     return new Promise(function(resolve, reject) {
-        fs.readFile(path.join(paths.post, post.file), function(err, data) {
+        fs.readFile(path.join(config.path.post, post.file), function(err, data) {
             resolve({
                 postTitle: post.subject,
                 postDate: `${post.year}.${post.month}.${post.day} ${post.hour}:${post.minute}`,
@@ -27,5 +27,5 @@ function convertPost(post) {
 }
 
 module.exports = {
-    index: index
+    list: list
 }
