@@ -78,6 +78,7 @@ pre {
     padding: 10px;
     color: white;
     background: black;
+    overflow: auto;
 }
 pre code {
     padding: 0;
@@ -99,8 +100,15 @@ pre code {
     font-size: 16pt;
 }
 #header .header-title, #body {
-    width: 80%;    
+    width: 80%;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #header .header-title, #body {
+        width: auto;
+        margin: 0 auto;
+    }
 }
 
 
@@ -126,6 +134,15 @@ pre code {
     padding: 25px 25px 40px 25px;
     background: rgb(240, 240, 240);
 }
+@media (max-width: 768px) {
+    .post {
+        margin-bottom: 50px;
+    }
+    .post .post-header {
+        padding: 5px 25px 40px 25px;
+    }
+}
+
 .post .post-header .post-title {
     font-size: 24pt;
     text-align: center;
@@ -142,10 +159,17 @@ pre code {
  * post body
  ****************************************************/
 
- .post .post-body {
+.post .post-body {
     padding: 25px;
     border: 1px solid rgb(230, 230, 230);
 }
+
+@media (max-width: 768px) {
+    .post .post-body {
+        border: none;
+    }
+}
+
 .post .post-body *:first-child {
     margin-top: 0;
 }
@@ -165,6 +189,10 @@ pre code {
     font-size: 14pt;
 }
 
+.post .post-body img {
+    max-width: 90%;
+}
+
 .post .post-body hr {
     width: 90%;
     margin: 35px auto;
@@ -173,5 +201,42 @@ pre code {
 }
 
 .post .post-hr {
+    display: none;
+}
+
+
+/****************************************************
+ * list
+ ****************************************************/
+
+.post-list {
+    margin: 35px 0;
+}
+.post-list a.post-list-wrap-link {
+    text-decoration: inherit;
+    color: inherit;
+}
+.post-list .post-header {
+    position: relative;
+    background: rgb(240, 240, 240);
+}
+.post-list .post-header .post-title {
+    font-size: 18pt;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+}
+.post-list .post-header .post-info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 10pt;
+    color: rgb(100, 100, 100);
+}
+
+.post-list .post-body {
+    background: white;
+    padding: 15px;
+}
+.post-list .post-hr {
     display: none;
 }

@@ -20,13 +20,14 @@ function parseFileName(fileName) {
     }
 
     return  {
-        file:    parsed[0],
-        year:    parsed[1],
-        month:   parsed[2],
-        day:     parsed[3],
-        hour:    parsed[4],
-        minute:  parsed[5],
-        subject: parsed[6],
+        file:       parsed[0],
+        year:       parsed[1],
+        month:      parsed[2],
+        day:        parsed[3],
+        hour:       parsed[4],
+        minute:     parsed[5],
+        subject:    parsed[6],
+        subjectUrl: parsed[6].replace(/ /g, '_'),
     };
 }
 

@@ -1,4 +1,4 @@
-const post = require('./lib.post');
+const post = require('./lib.post.file');
 const path = require('path');
 
 (async function () {
