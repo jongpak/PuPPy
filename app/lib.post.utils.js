@@ -4,6 +4,11 @@ const marked = require('marked');
 
 const config = require('./config.app');
 
+/**
+ * 
+ * @param {object} post 
+ * @returns {object}
+ */
 function convertPost(post) {
     return new Promise(function(resolve, reject) {
         fs.readFile(path.join(config.path.post, post.file), function(err, data) {
@@ -21,6 +26,12 @@ function convertPost(post) {
     });
 }
 
+/**
+ * 
+ * @param {string} postBody 
+ * @param {number} len 
+ * @returns {string}
+ */
 function summaryPostBody(postBody, len) {
     len = len || 200;
 

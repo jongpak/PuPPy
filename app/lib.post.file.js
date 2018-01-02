@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+/**
+ * 
+ * @param {string} postDir 
+ * @returns {array}
+ */
 function getPosts(postDir) {
     return new Promise(function(resolve, reject) {
         fs.readdir(postDir, function(err, files) {
@@ -12,6 +17,11 @@ function getPosts(postDir) {
     });
 }
 
+/**
+ * 
+ * @param {string} fileName 
+ * @returns {object}
+ */
 function parseFileName(fileName) {
     const parsed = fileName.match(/([0-9]{4})-([0-9]{2})-([0-9]{2})_([0-9]{2})-([0-9]{2})_(.*).md/);
 
