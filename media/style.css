@@ -126,13 +126,11 @@ pre code {
  ****************************************************/
 
 .post {
-    background: white;
     margin-bottom: 75px;
 }
 .post .post-header {
     position: relative;
     padding: 25px 25px 40px 25px;
-    background: rgb(240, 240, 240);
 }
 @media (max-width: 768px) {
     .post {
@@ -161,7 +159,7 @@ pre code {
 
 .post .post-body {
     padding: 25px;
-    border: 1px solid rgb(230, 230, 230);
+    background: white;
 }
 
 @media (max-width: 768px) {
@@ -239,4 +237,18 @@ pre code {
 }
 .post-list .post-hr {
     display: none;
+}
+
+
+/****************************************************
+ * error
+ ****************************************************/
+.error .error-title {
+    font-size: 28pt;
+    font-weight: 200;
+    text-align: center;
+}
+.error .error-body {
+    padding: 15px;
+    background: white;
 }

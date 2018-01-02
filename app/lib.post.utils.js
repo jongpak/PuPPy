@@ -7,6 +7,10 @@ const config = require('./config.app');
 function convertPost(post) {
     return new Promise(function(resolve, reject) {
         fs.readFile(path.join(config.path.post, post.file), function(err, data) {
+            if(err) {
+                return reject(err);
+            }
+
             resolve({
                 post: post,
                 postTitle: post.subject,
