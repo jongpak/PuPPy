@@ -145,10 +145,15 @@ pre code {
     font-size: 24pt;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .post .post-header .post-title {
+        font-size: 20pt;
+    }
+}
 .post .post-header .post-info {
     position: absolute;
     right: 25px;
-    font-size: 10pt;
+    font-size: 9pt;
     color: rgb(100, 100, 100);
 }
 
@@ -186,6 +191,22 @@ pre code {
 .post .post-body h6 {
     font-size: 14pt;
 }
+@media (max-width: 768px) {
+    .post .post-body h1 {
+        font-size: 18pt;
+    }
+    .post .post-body h2 {
+        font-size: 16pt;
+    }
+    .post .post-body h3 {
+        font-size: 14pt;
+    }
+    .post .post-body h4,
+    .post .post-body h5,
+    .post .post-body h6 {
+        font-size: 14pt;
+    }
+}
 
 .post .post-body img {
     max-width: 90%;
@@ -210,6 +231,11 @@ pre code {
 .post-list {
     margin: 35px 0;
 }
+@media (max-width: 768px) {
+    .post-list {
+        margin: 35px 10px;
+    }
+}
 .post-list a.post-list-wrap-link {
     text-decoration: inherit;
     color: inherit;
@@ -223,11 +249,16 @@ pre code {
     margin-bottom: 0;
     padding-bottom: 5px;
 }
+@media (max-width: 768px) {
+    .post-list .post-header .post-title {
+        font-size: 16pt;
+    }
+}
 .post-list .post-header .post-info {
     position: absolute;
     right: 0;
     top: 0;
-    font-size: 10pt;
+    font-size: 9pt;
     color: rgb(100, 100, 100);
 }
 
