@@ -19,7 +19,7 @@ function convertPost(post) {
             resolve({
                 post: post,
                 postTitle: post.subject,
-                postDate: `${post.year}.${post.month}.${post.day} ${post.hour}:${post.minute}`,
+                postDate: `${post.year}.${post.month}.${post.day}`,
                 postBody: marked(data.toString())
             });
         });
@@ -41,7 +41,6 @@ function summaryPostBody(postBody, len) {
         .replace(/\n/g, ' ')
         .substr(0, len)
         .trim();
-
 }
 
 module.exports = {
