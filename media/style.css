@@ -99,6 +99,10 @@ pre code {
 #header .header-title {
     font-size: 16pt;
 }
+#header .header-title a {
+    color: inherit;
+    text-decoration: none;
+}
 #header .header-title, #body {
     width: 80%;
     margin: 0 auto;
