@@ -8,24 +8,24 @@ const postUtil = require('./app/lib.post.utils');
 const urlUtil = require('./app/lib.url');
 
 const config = require('./app/config.app');
-const hbsConfig = require('./app/config.handlerbars');
-
-hbsConfig.setUrl('.');
-hbsConfig.setStatic();
-
-Object.keys(hbsConfig.helpers).forEach(function(name) {
-    handlerbars.registerHelper(name, hbsConfig.helpers[name]);
-});
-
-const layoutTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'layout.hbs')).toString();
-const listTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'list.hbs')).toString();
-const postTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'posts.hbs')).toString();
+const hbsConfig = require('./app/config.handlerbars')();
 
 function copyObject(posts) {
     return JSON.parse(JSON.stringify(posts));
 }
 
-(async function () {
+async function build() {
+    hbsConfig.setUrl('.');
+    hbsConfig.setStatic();
+
+    Object.keys(hbsConfig.helpers).forEach(function(name) {
+        handlerbars.registerHelper(name, hbsConfig.helpers[name]);
+    });
+
+    const layoutTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'layout.hbs')).toString();
+    const listTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'list.hbs')).toString();
+    const postTemplate = fs.readFileSync(path.join(hbsConfig.layoutsDir, 'posts.hbs')).toString();
+
     const posts = await post.getPosts(config.path.post);
 
     const processedPosts = await Promise.all(posts.map(postUtil.convertPost));
@@ -52,7 +52,7 @@ function copyObject(posts) {
      *******************************/
     console.log('Builing index.html');
     const listHtml = (handlerbars.compile(listTemplate))({
-        posts: summarizedPosts,
+        posts: summarizedPosts
     });
     const indexHtml = (handlerbars.compile(layoutTemplate))({
         body: listHtml
@@ -89,4 +89,12 @@ function copyObject(posts) {
     hbsConfig.setUrl('.');
 
     console.log('Complete');
-})();
+}
+
+if(require.main == module) {
+    build();
+} else {
+    module.exports = {
+        build: build
+    };
+}

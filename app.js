@@ -4,6 +4,7 @@ const exphbs  = require('express-handlebars');
 
 const app = express();
 const config = require('./app/config.app');
+const hbsConfig = require('./app/config.handlerbars')();
 
 const index = require('./app/controller.index');
 const post = require('./app/controller.post');
@@ -17,12 +18,17 @@ const asyncRoute = function(func) {
     };
 };
 
-app.engine('hbs', exphbs(require('./app/config.handlerbars')));
+app.engine('hbs', exphbs(hbsConfig));
 app.set('views', path.join(__dirname, 'template'));
 app.set('view engine', 'hbs');
 
 app.get('/', asyncRoute(index.list));
 app.get('/post/:year([0-9]{4})/:month([0-9]{2}):day([0-9]{2})/:subject', asyncRoute(post.view));
+app.get('/build', asyncRoute(async function(req, res) {
+    await require('./build').build();
+
+    res.send('OK');
+}));
 
 app.use('/media', express.static('media'));
 app.use(error.error);
