@@ -5,8 +5,8 @@ const marked = require('marked');
 const config = require('./config.app');
 
 /**
- * 
- * @param {object} post 
+ *
+ * @param {object} post
  * @returns {object}
  */
 function convertPost(post) {
@@ -16,11 +16,14 @@ function convertPost(post) {
                 return reject(err);
             }
 
+            const postBody = data.toString();
+
             resolve({
                 post: post,
                 postTitle: post.subject,
                 postDate: `${post.year}.${post.month}.${post.day}`,
-                postBody: marked(data.toString())
+                postBody: marked(postBody),
+                files: postBody.match(/(?=\(|\s)?(?=\.\/)?files\/.+?(?=\)|\s)/g) || [ ]
             });
         });
     });
@@ -28,8 +31,8 @@ function convertPost(post) {
 
 /**
  * 
- * @param {string} postBody 
- * @param {number} len 
+ * @param {string} postBody
+ * @param {number} len
  * @returns {string}
  */
 function summaryPostBody(postBody, len) {

@@ -92,6 +92,26 @@ async function build() {
 
 
     /*******************************
+     * Copy attach files
+     *******************************/
+    console.log('Copying files directory');
+    processedPosts.forEach(function(content) {
+        const postFilePath = path.join(config.path.output, urlUtil.makePostUrl(content.post, true));
+        const postFileRoot = path.dirname(postFilePath);
+
+        content.files.forEach(function(file) {
+            const fileOutputPath = path.join(postFileRoot, file);
+
+            mkdirp.sync(path.dirname(fileOutputPath));
+            fs.copyFileSync(path.join(config.path.post, file), fileOutputPath);
+            
+            console.log(`    [OK] ${fileOutputPath}`);
+        });
+    });
+    console.log();
+
+
+    /*******************************
      * Copy media files
      *******************************/
     console.log('Copying media directory');

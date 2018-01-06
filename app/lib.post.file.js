@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 /**
- * 
- * @param {string} postDir 
+ *
+ * @param {string} postDir
  * @returns {array}
  */
 function getPosts(postDir) {
@@ -12,14 +12,18 @@ function getPosts(postDir) {
                 return reject(err);
             }
 
-            resolve(files.map(parseFileName));
+            resolve(
+                files
+                    .filter((e) => e.match(/.md$/))
+                    .map(parseFileName)
+            );
         });
     });
 }
 
 /**
- * 
- * @param {string} fileName 
+ *
+ * @param {string} fileName
  * @returns {object}
  */
 function parseFileName(fileName) {

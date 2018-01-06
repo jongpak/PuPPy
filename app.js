@@ -31,6 +31,7 @@ app.get('/build', asyncRoute(async function(req, res) {
 }));
 
 app.use('/media', express.static('media'));
+app.use('/post/:year([0-9]{4})/:month([0-9]{2}):day([0-9]{2})/:subject/files', express.static(path.join(config.path.post, 'files')));
 app.use(error.error);
 
 app.listen(config.port, function () {
