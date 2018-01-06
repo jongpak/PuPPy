@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
+const copydir = require('copy-dir');
 const handlerbars = require('handlebars');
 
 const post = require('./app/lib.post.file');
@@ -58,8 +59,9 @@ async function build() {
         body: listHtml
     });
 
+    mkdirp.sync(config.path.output);
     fs.writeFileSync(path.join(config.path.output, 'index.html'), indexHtml);
-    console.log('    [OK]');
+    console.log(`    [OK] ${config.path.output}/index.html`);
     console.log();
 
 
@@ -78,7 +80,7 @@ async function build() {
         });
 
         const outputPath = path.join(config.path.output, urlUtil.makePostUrl(content.post, true));
-        
+
         mkdirp.sync(path.dirname(outputPath));
         fs.writeFileSync(outputPath, layoutHtml);
 
@@ -87,6 +89,17 @@ async function build() {
 
     console.log();
     hbsConfig.setUrl('.');
+
+
+    /*******************************
+     * Copy media files
+     *******************************/
+    console.log('Copying media directory');
+    mkdirp.sync(path.join(config.path.output, 'media'));
+    copydir.sync('media', path.join(config.path.output, 'media'));
+    console.log('   [OK]');
+    console.log();
+
 
     console.log('Complete');
 }

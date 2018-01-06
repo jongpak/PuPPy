@@ -7,7 +7,7 @@ module.exports = {
         template: path.join(__dirname, '../template'),
         post: path.join(__dirname, '../_post'),
         
-        output: ''
+        output: path.join(__dirname, '../output')
     },
 
     site: {
