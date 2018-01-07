@@ -15,6 +15,11 @@ async function list (req, res) {
     });
 }
 
+function write (req, res) {
+    res.render('write');
+}
+
 module.exports = {
-    list: list
+    list: list,
+    write: write
 }

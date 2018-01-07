@@ -86,6 +86,31 @@ pre code {
     background: transparent;
 }
 
+form > p {
+    margin: 0;
+    padding: 0;
+}
+label {
+    display: none;
+}
+input, textarea {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: inherit;
+    border: none;
+    background: white;
+}
+input[type=submit] {
+    float: right;
+    margin: 20px;
+    border-radius: 200px;
+    border: 1px solid rgb(230, 230, 230);
+    color: rgb(100, 100, 100);
+}
+input[type=submit]:after {
+    clear: both;
+    content: '';
+}
 
 /****************************************************
  * header
@@ -272,6 +297,48 @@ pre code {
 }
 .post-list .post-hr {
     display: none;
+}
+
+
+/****************************************************
+ * write
+ ****************************************************/
+.post-write {
+    margin-top: 50px;
+}
+
+ .post-write h2 {
+    display: none;
+}
+
+.post-write #post-title {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 10px;
+    font-size: 24pt;
+    font-weight: 500;
+    text-align: center;
+    background: none;
+    outline: none;
+}
+
+.post-write .post-content-wrap {
+    padding: 25px;
+    background: white;
+}
+
+.post-write #post-content {
+    display: block;
+    width: 100%;
+    resize: vertical;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4em;
+    font-size: 12pt;
+    font-weight: 300;
+    outline: none;
 }
 
 
