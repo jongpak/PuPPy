@@ -1,0 +1,19 @@
+{
+  "name": "puppy",
+  "description": "Puppy is static blog html generator from markdown",
+  "authors": [
+    "jongpak <jplabs@jongpak.com>"
+  ],
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/jongpak/puppy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tui-editor": "^1.0.1"
+  }
+}
