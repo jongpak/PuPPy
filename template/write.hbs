@@ -6,9 +6,36 @@
             <p><input type="text" placeholder="Title" name="post-title" id="post-title" /></p>
 
             <p><label for="post-content">Content</label></p>
-            <p class="post-content-wrap"><textarea cols="80" rows="20" placeholder="Content" name="post-content" id="post-content"></textarea></p>
+            <div class="post-content-wrap">
+	        <textarea cols="80" rows="20" placeholder="Content" name="post-content" id="post-content"></textarea>
+                <div id="post-content-editor"></div>
+            </div>
 
             <p><input type="submit" value="Save" /></p>
         </form>
     </div>
 </div>
+
+<script src="{{ url }}/media/bower_components/jquery/dist/jquery.js"></script>
+<script src="{{ url }}/media/bower_components/markdown-it/dist/markdown-it.js"></script>
+<script src="{{ url }}/media/bower_components/toMark/dist/toMark.js"></script>
+<script src="{{ url }}/media/bower_components/tui-code-snippet/dist/tui-code-snippet.js"></script>
+<script src="{{ url }}/media/bower_components/codemirror/lib/codemirror.js"></script>
+<script src="{{ url }}/media/bower_components/highlightjs/highlight.pack.js"></script>
+<script src="{{ url }}/media/bower_components/squire-rte/build/squire-raw.js"></script>
+<script src="{{ url }}/media/bower_components/tui-editor/dist/tui-editor-Editor.js"></script>
+
+<script class="code-js">
+    var editor = new tui.Editor({
+        el: document.querySelector("#post-content-editor"),
+        initialEditType: "wysiwyg",
+        previewStyle: "vertical",
+        height: "600px",
+        exts: [ "scrollFollow" ]
+    });
+
+    document.querySelector("#post-content").style.display = "none";
+</script>
+<style>
+    .tui-editor-contents pre { background-color: black !important; }
+</style>
