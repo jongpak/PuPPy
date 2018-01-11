@@ -1,0 +1,174 @@
+.CodeMirror-scroll {
+    padding: 25px;
+}
+.tui-editor-defaultUI .CodeMirror-lines,
+.tui-editor-defaultUI .CodeMirror-line,
+.tui-editor-defaultUI .CodeMirror-sizer {
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+
+.tui-editor-defaultUI .CodeMirror-sizer {
+    padding-bottom: 75px !important;
+}
+
+.te-editor-section, .te-preview {
+    padding: 0 !important;
+}
+
+.tui-editor-contents {
+    margin: 0 !important;
+    padding: 25px !important;
+}
+
+.tui-editor-contents *,
+.tui-editor-defaultUI .CodeMirror-lines {
+    font-size: 12pt;
+    font-weight: 300;
+    color: black;
+    font-family: sans-serif;
+    line-height: 1.4em !important;
+}
+
+.tui-editor-contents a, .tui-editor-contents a:hover {
+    color: blue;
+}
+
+.tui-editor-contents > div, .tui-editor-contents p {
+    margin: 20px 0;
+}
+.tui-editor-contents > div:first-child, .tui-editor-contents p:first-child {
+    margin-top: 0;
+}
+
+.tui-editor-contents h1,
+.tui-editor-contents h2,
+.tui-editor-contents h3,
+.tui-editor-contents h4,
+.tui-editor-contents h5,
+.tui-editor-contents h6,
+.CodeMirror .cm-header {
+    font-weight: 500;
+    margin: 20px 0 5px 0;
+    padding: 0;
+    border: none;
+    line-height: 1.4em;
+}
+
+.tui-editor-contents h1 *,
+.tui-editor-contents h2 *,
+.tui-editor-contents h3 *,
+.tui-editor-contents h4 *,
+.tui-editor-contents h5 *,
+.tui-editor-contents h6 *,
+.CodeMirror .cm-header * {
+    font-size: inherit;
+}
+
+.tui-editor-contents h1, .tui-editor-contents h1 div,
+.CodeMirror .cm-header-1 {
+    font-weight: 500;
+    font-size: 20pt;
+}
+.tui-editor-contents h2, .tui-editor-contents h2 div,
+.CodeMirror .cm-header-2 {
+    font-weight: 500;
+    font-size: 18pt;
+}
+.tui-editor-contents h3, .tui-editor-contents h3 div,
+.CodeMirror .cm-header-3 {
+    font-weight: 500;
+    font-size: 16pt;
+}
+.tui-editor-contents h4, .tui-editor-contents h4 div,
+.tui-editor-contents h5, .tui-editor-contents h5 div,
+.tui-editor-contents h6, .tui-editor-contents h6 div,
+.CodeMirror .cm-header-4,
+.CodeMirror .cm-header-5,
+.CodeMirror .cm-header-6 {
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.tui-editor-contents h1:first-child,
+.tui-editor-contents h2:first-child,
+.tui-editor-contents h3:first-child,
+.tui-editor-contents h4:first-child,
+.tui-editor-contents h5:first-child,
+.tui-editor-contents h6:first-child {
+    margin-top: 0;
+}
+
+.tui-editor-contents ol,
+.tui-editor-contents ul {
+    margin: 15px 0;
+    padding: 0;
+    line-height: 1.4em;
+}
+.tui-editor-contents ul ul,
+.tui-editor-contents ol ol {
+    margin: 0;
+}
+.tui-editor-contents li {
+    margin: 0 0 0 20px !important;
+}
+
+.tui-editor-contents strong, .tui-editor-contents b {
+    font-weight: bold;
+}
+.tui-editor-contents em, .tui-editor-contents i {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.tui-editor-contents code {
+    padding: 2px;
+    background: rgb(225, 225, 225);
+    color: rgb(200, 50, 50);
+}
+
+.tui-editor-contents pre code {
+    padding: 0;
+    color: inherit;
+    background: transparent;
+}
+
+.tui-editor-contents pre {
+    padding: 10px;
+    color: white;
+    background: black;
+    overflow: auto;
+}
+.tui-editor-contents pre * {
+    color: inherit;
+}
+
+.tui-editor-contents blockquote {
+    padding: 10px;
+    border-left: 7px solid rgb(200, 200, 200);
+    background: rgb(240, 240, 240);
+    color: inherit;
+}
+
+.tui-editor-contents table {
+    border-collapse: collapse;
+}
+.tui-editor-contents table th {
+    background: rgb(230, 230, 230);
+    color: inherit;
+    font-weight: 500 !important;
+}
+.tui-editor-contents table td,
+.tui-editor-contents table th {
+    border: 1px solid rgb(200, 200, 200);
+    height: auto;
+    padding: 5px;
+}
+
+.tui-editor-contents hr {
+    width: 90%;
+    margin: 35px auto;
+    border: none;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}

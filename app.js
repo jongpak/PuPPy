@@ -23,7 +23,8 @@ app.set('views', path.join(__dirname, 'template'));
 app.set('view engine', 'hbs');
 
 app.get('/', asyncRoute(index.list));
-app.get('/write', index.write);
+app.get('/write', index.writeView);
+app.post('/write', index.write);
 app.get('/post/:year([0-9]{4})/:month([0-9]{2}):day([0-9]{2})/:subject', asyncRoute(post.view));
 app.get('/build', asyncRoute(async function(req, res) {
     await require('./build').build();

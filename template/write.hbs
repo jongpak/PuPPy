@@ -6,8 +6,10 @@
             <p><input type="text" placeholder="Title" name="post-title" id="post-title" /></p>
 
             <p><label for="post-content">Content</label></p>
-            <div class="post-content-wrap">
-	        <textarea cols="80" rows="20" placeholder="Content" name="post-content" id="post-content"></textarea>
+            <div id="post-content-wrap">
+                <div id="post-content-textarea-wrap">
+                    <textarea cols="80" rows="20" placeholder="Content" name="post-content" id="post-content"></textarea>
+                </div>
                 <div id="post-content-editor"></div>
             </div>
 
@@ -24,6 +26,7 @@
 <script src="{{ url }}/media/bower_components/highlightjs/highlight.pack.js"></script>
 <script src="{{ url }}/media/bower_components/squire-rte/build/squire-raw.js"></script>
 <script src="{{ url }}/media/bower_components/tui-editor/dist/tui-editor-Editor.js"></script>
+<script src="{{ url }}/media/bower_components/tui-editor/dist/tui-editor-extScrollSync.js"></script>
 
 <script class="code-js">
     var editor = new tui.Editor({
@@ -31,10 +34,10 @@
         initialEditType: "wysiwyg",
         previewStyle: "vertical",
         height: "600px",
-        exts: [ "scrollFollow" ]
+        exts: [ "scrollSync" ]
     });
 
-    document.querySelector("#post-content").style.display = "none";
+    document.querySelector("#post-content-textarea-wrap").style.display = "none";
 </script>
 <style>
     .tui-editor-contents pre { background-color: black !important; }

@@ -15,11 +15,16 @@ async function list (req, res) {
     });
 }
 
-function write (req, res) {
+function writeView (req, res) {
     res.render('write');
+}
+
+function write(req, res) {
+    res.end('OK');
 }
 
 module.exports = {
     list: list,
+    writeView: writeView,
     write: write
 }
