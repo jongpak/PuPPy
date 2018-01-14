@@ -20,7 +20,7 @@ function writeView (req, res) {
 }
 
 function write(req, res) {
-    res.end('OK');
+    res.end(JSON.stringify(req.body));
 }
 
 module.exports = {
