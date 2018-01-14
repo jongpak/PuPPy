@@ -5,18 +5,11 @@ const exphbs  = require('express-handlebars');
 const app = express();
 const config = require('./app/config.app');
 const hbsConfig = require('./app/config.handlerbars')();
+const asyncRoute = require('./app/lib.asyncRoute');
 
 const index = require('./app/controller.index');
 const post = require('./app/controller.post');
 const error = require('./app/controller.error');
-
-const asyncRoute = function(func) {
-    return function(req, res, next) {
-        Promise
-            .resolve(func(req, res, next))
-            .catch(next);
-    };
-};
 
 app.engine('hbs', exphbs(hbsConfig));
 app.set('views', path.join(__dirname, 'template'));
