@@ -5,8 +5,10 @@ Puppy is static blog html generator from markdown
 ## Usage
 ### Prerequirement
 * node.js >= 7
+* Bower
 
 ```
+$ bower install
 $ node app.js
 Puppy listening on port 8000
 ```
