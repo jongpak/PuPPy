@@ -12,6 +12,6 @@ module.exports = {
 
     site: {
         url: '',
-        name: "종박's 연구소"
+        name: "My Blog"
     }
 }
