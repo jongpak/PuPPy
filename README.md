@@ -2,7 +2,7 @@
 Puppy is static blog html generator from markdown
 
 
-## Installation
+## Usage
 ### Prerequirement
 * node.js >= 7
 
@@ -16,13 +16,15 @@ Now, you can connect http://127.0.0.1:8000 and read/write posts looks like blog.
 
 ## Where are my markdown files about posts?
 * Your markdown files place `_post` directory
+* File name format is `YYYY-MM-dd_title.md`
 
 
 ## Configuration
 * See app/config.app.js
 
 
-## Building on command line
+## Building static site using commend line interface
+* Output path is `output` directory
 ```
 $ node build.js
 Posts:
