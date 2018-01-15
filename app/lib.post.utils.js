@@ -20,7 +20,7 @@ function convertPost(post) {
 
             resolve({
                 post: post,
-                postTitle: post.subject,
+                postTitle: post.title,
                 postDate: `${post.year}.${post.month}.${post.day}`,
                 postBody: marked(postBody),
                 files: postBody.match(/(?=\(|\s)?(?=\.\/)?files\/.+?(?=\)|\s)/g) || [ ]

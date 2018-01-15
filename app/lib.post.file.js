@@ -38,8 +38,8 @@ function parseFileName(fileName) {
         year: parsed[1],
         month: parsed[2],
         day: parsed[3],
-        subject: parsed[4],
-        subjectUrl: parsed[4].replace(/ /g, '_'),
+        title: parsed[4],
+        titleUrl: parsed[4].replace(/ /g, '_'),
     };
 }
 
